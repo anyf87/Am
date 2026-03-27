@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Projeto Aniversário</title>  <style>  
+  
+*{  
+box-sizing:border-box;  
+}  
+  
+body{  
+background:#d1cfc9;  
+margin:0;  
+font-family:Arial, sans-serif;  
+overflow-x:hidden;  
+}  
+  
+/* Cabeçalho */  
+  
+header{  
+background:#0f1a2b;  
+color:white;  
+text-align:center;  
+padding:18px;  
+font-size:22px;  
+}  
+  
+/* Área visível */  
+  
+.wrapper{  
+height:calc(100vh - 60px);  
+overflow:hidden;  
+position:relative;  
+}  
+  
+/* Container */  
+  
+.container{  
+display:flex;  
+height:100%;  
+transition:transform 0.5s ease;  
+}  
+  
+/* Páginas */
+
+.pagina{
+width:100vw;
+height:100%;
+flex-shrink:0;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+font-size:30px;
+}
+
+/* Caixa de texto */
+
+.texto{
+max-width:600px;
+margin:0 auto;
+
+padding:30px;
+
+font-size:18px;
+line-height:1.8;
+
+color:#222;
+
+background:rgba(255,255,255,0.6);
+backdrop-filter: blur(8px);
+
+border-radius:15px;
+
+box-shadow:0 6px 20px rgba(0,0,0,0.15);
+}
+  
+/* Botões */  
+  
+.botoes{  
+position:absolute;  
+bottom:20px;  
+width:100%;  
+display:flex;  
+justify-content:space-between;  
+padding:0 20px;  
+}  
+  
+button{  
+padding:12px 22px;  
+border:none;  
+background:#0f1a2b;  
+color:white;  
+font-size:15px;  
+border-radius:8px;  
+cursor:pointer;  
+transition:0.3s;  
+}  
+  
+button:hover{  
+background:#52677d;  
+transform:scale(1.05);  
+}  
+  
+</style> 
+
+</head>  
+
+<body> 
+
+<header>  
+Feliz Aniversário!!  
+</header> 
+<div class="wrapper">
+<div class="container" id="container"> 
+<div class="pagina">
+<h1>Parabéns, 22ko!</h1>
+
+<div class="texto">
+<p>
+Parabéns, 22ko!! 
+Espero passar essa data com você por muitos anos ainda. Acredite, não vai se livrar de mim assim tão cedo. Quero comemorar ao seu lado cada conquista sua, assim como quero te apoiar em cada situação complicada.
+Não sou capaz citar aqui todas as suas qualidades, são muitas, mas que você continue sendo assim, determinado, tranquilo, gentil, carinhoso, enfim, essa pessoa sensacional que você é. Talvez discorde, mas você é incrível, meu bem.
+Sempre me apoiou, aconselhou e me ouviu. Sou grata por te ter na minha vida, por cada momento, por cada carinho, por cada briga, por tudo. Eu te amo demais!
+</p>
+</div>
+</div>
+
+<div class="pagina">  
+<p>Pra ser sincera, eu planejava te dar um gift card pra você comprar aqueles jogos de gente esquisita, e tudo. Mas como não deu certo, eu pensei que melhor que te comprar um, seria se eu fizesse um, né? Até porque aposto que ninguém já fez um pra você. Ficou bem simpleszinho, mas tive muita dor de cabeça pra fazer, viu? Afinal, decidi que ia fazer isso faltando umas 3 semamas.
+</p>  
+</div>  
+
+<div class="pagina">  
+
+<h2>Joguinho 🎮</h2>
+
+<iframe 
+  src="jogo.html" 
+  width="640" 
+  height="360"
+  style="border:none; margin-top:20px;">
+</iframe>
+
+</div>
+
+ <div class="pagina">  
+<h2>Página 4</h2>  
+<p>Uma mensagem importante.</p>  
+</div>  <div class="pagina">  
+<h2>Página 5</h2>  
+<p>🎉 Feliz aniversário!</p>  
+</div>  </div>  <div class="botoes">  
+<button onclick="anterior()">Anterior</button>  
+<button onclick="proxima()">Próximo</button>  
+</div>  </div>  <script>  
+  
+let pagina = 0;  
+const total = 5;  
+const container = document.getElementById("container");  
+  
+function atualizar(){  
+container.style.transform = "translateX(-"+(pagina*100)+"vw)";  
+}  
+  
+function proxima(){  
+if(pagina < total-1){  
+pagina++;  
+atualizar();  
+}  
+}  
+  
+function anterior(){  
+if(pagina > 0){  
+pagina--;  
+atualizar();  
+}  
+}  
+  
+</script>  </body>  
+</html>
